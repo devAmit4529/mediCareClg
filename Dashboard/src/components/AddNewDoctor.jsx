@@ -58,10 +58,14 @@ const AddNewDoctor = () => {
       formData.append("doctorDepartment", doctorDepartment);
       formData.append("docAvatar", docAvatar);
       await axios
-          "https://medicarebackend-jj50.onrender.com/api/v1/user/doctor/addnew",formData, {
-          withCredentials: true,
-          headers: { "Content-Type": "multipart/form-data" },
-        })
+        .post(
+          "https://medicarebackend-jj50.onrender.com/api/v1/user/doctor/addnew",
+          formData,
+          {
+            withCredentials: true,
+            headers: { "Content-Type": "multipart/form-data" },
+          }
+        )
         .then((res) => {
           toast.success(res.data.message);
           setIsAuthenticated(true);
