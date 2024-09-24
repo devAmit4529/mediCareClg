@@ -24,7 +24,7 @@ const AddNewAdmin = () => {
       const response=
       await axios
         .post(
-          "http://localhost:4000/api/v1/user/admin/addnew",
+          "https://medicarebackend-jj50.onrender.com/api/v1/user/admin/addnew",
           { firstName, lastName, email, phone, nic, dob, gender, password },
           {
             withCredentials: true,
